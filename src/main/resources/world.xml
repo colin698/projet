@@ -15,6 +15,11 @@
       <logo>logo2</logo>
       <cout>4</cout>
       <croissance>0.07</croissance>
+      <revenu>1</revenu>
+      <vitesse>0.5</vitesse>
+      <quantite>1</quantite>
+      <timeleft>0.5</timeleft>
+      <managerUnlocked>false</managerUnlocked>
       <revenu>3.1415926535</revenu>
       <vitesse>123</vitesse>
       <quantite>123</quantite>
@@ -22,27 +27,44 @@
       <managerUnlocked>true</managerUnlocked>
       <palliers>
         <pallier>
-          <name>str1234</name>
-          <logo>str1234</logo>
-          <seuil>300</seuil>
-          <idcible>123</idcible>
+          <name>pallier1</name>
+          <logo>logoPallier</logo>
+          <seuil>10</seuil>
+          <idcible>1</idcible>
           <ratio>3.1415926535</ratio>
           <typeratio>vitesse</typeratio>
-          <unlocked>true</unlocked>
+          <unlocked>false</unlocked>
         </pallier>
-      </palliers>
+        <pallier>
+          <name>pallier2</name>
+          <logo>logoPallier2</logo>
+          <seuil>25</seuil>
+          <idcible>1</idcible>
+          <ratio>3.1415926535</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>pallier3</name>
+          <logo>logoPallier3</logo>
+          <seuil>50</seuil>
+          <idcible>1</idcible>
+          <ratio>3.1415926535</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
     </product>
     <product>
       <id>2</id>
-      <name>Solana</name>
-      <logo>logo2</logo>
-      <cout>3.1415926535</cout>
-      <croissance>3.1415926535</croissance>
-      <revenu>3.1415926535</revenu>
-      <vitesse>123</vitesse>
-      <quantite>123</quantite>
-      <timeleft>12345</timeleft>
-      <managerUnlocked>true</managerUnlocked>
+      <name>Stephen Curry</name>
+      <logo>logo3</logo>
+      <cout>60</cout>
+      <croissance>0.15</croissance>
+      <revenu>60</revenu>
+      <vitesse>3</vitesse>
+      <quantite>0</quantite>
+      <timeleft>3</timeleft>
+      <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
           <name>str1234</name>
@@ -183,13 +205,13 @@
   </angelupgrades>
   <managers>
     <pallier>
-      <name>str1234</name>
-      <logo>str1234</logo>
-      <seuil>123</seuil>
-      <idcible>123</idcible>
+      <name>manager1</name>
+      <logo>logo4</logo>
+      <seuil>1000</seuil>
+      <idcible>1</idcible>
       <ratio>3.1415926535</ratio>
       <typeratio>vitesse</typeratio>
-      <unlocked>true</unlocked>
+      <unlocked>false</unlocked>
     </pallier>
   </managers>
 </world>
