@@ -12,66 +12,44 @@
     <product>
       <id>1</id>
       <name>XRP</name>
-      <logo>logo2</logo>
+      <logo>xrp.jpg</logo>
       <cout>4</cout>
-      <croissance>0.07</croissance>
+      <croissance>1.07</croissance>
       <revenu>1</revenu>
       <vitesse>0.5</vitesse>
       <quantite>1</quantite>
-      <timeleft>0.5</timeleft>
+      <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
-      <revenu>3.1415926535</revenu>
-      <vitesse>123</vitesse>
-      <quantite>123</quantite>
-      <timeleft>12345</timeleft>
-      <managerUnlocked>true</managerUnlocked>
       <palliers>
         <pallier>
-          <name>pallier1</name>
-          <logo>logoPallier</logo>
-          <seuil>10</seuil>
+          <name>XRP</name>
+          <logo>xrp.jpg</logo>
+          <seuil>300</seuil>
           <idcible>1</idcible>
-          <ratio>3.1415926535</ratio>
+          <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
-          <unlocked>false</unlocked>
+          <unlocked>true</unlocked>
         </pallier>
-        <pallier>
-          <name>pallier2</name>
-          <logo>logoPallier2</logo>
-          <seuil>25</seuil>
-          <idcible>1</idcible>
-          <ratio>3.1415926535</ratio>
-          <typeratio>vitesse</typeratio>
-          <unlocked>false</unlocked>
-        </pallier>
-        <pallier>
-          <name>pallier3</name>
-          <logo>logoPallier3</logo>
-          <seuil>50</seuil>
-          <idcible>1</idcible>
-          <ratio>3.1415926535</ratio>
-          <typeratio>vitesse</typeratio>
-          <unlocked>false</unlocked>
-        </pallier>
+      </palliers>
     </product>
     <product>
       <id>2</id>
-      <name>Stephen Curry</name>
-      <logo>logo3</logo>
+      <name>Solana</name>
+      <logo>solana.png</logo>
       <cout>60</cout>
-      <croissance>0.15</croissance>
+      <croissance>1.15</croissance>
       <revenu>60</revenu>
       <vitesse>3</vitesse>
       <quantite>0</quantite>
-      <timeleft>3</timeleft>
+      <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>str1234</name>
-          <logo>str1234</logo>
+          <name>Solana</name>
+          <logo>solana.png</logo>
           <seuil>250</seuil>
-          <idcible>123</idcible>
-          <ratio>3.1415926535</ratio>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>true</unlocked>
         </pallier>
@@ -80,21 +58,21 @@
     <product>
       <id>3</id>
       <name>Shiba</name>
-      <logo>logo2</logo>
-      <cout>3.1415926535</cout>
-      <croissance>3.1415926535</croissance>
-      <revenu>3.1415926535</revenu>
+      <logo>shiba.png</logo>
+      <cout>720</cout>
+      <croissance>1.14</croissance>
+      <revenu>540</revenu>
       <vitesse>123</vitesse>
-      <quantite>123</quantite>
-      <timeleft>12345</timeleft>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
       <managerUnlocked>true</managerUnlocked>
       <palliers>
         <pallier>
-          <name>str1234</name>
-          <logo>str1234</logo>
+          <name>Shiba</name>
+          <logo>shiba.png</logo>
           <seuil>200</seuil>
-          <idcible>123</idcible>
-          <ratio>3.1415926535</ratio>
+          <idcible>3</idcible>
+          <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>true</unlocked>
         </pallier>
@@ -103,82 +81,82 @@
     <product>
       <id>4</id>
       <name>BNB</name>
-      <logo>logo2</logo>
-      <cout>3.1415926535</cout>
-      <croissance>3.1415926535</croissance>
-      <revenu>3.1415926535</revenu>
+      <logo>BnB.png</logo>
+      <cout>8640</cout>
+      <croissance>1.13</croissance>
+      <revenu>4320</revenu>
       <vitesse>123</vitesse>
-      <quantite>123</quantite>
-      <timeleft>12345</timeleft>
-      <managerUnlocked>true</managerUnlocked>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>str1234</name>
-          <logo>str1234</logo>
+          <name>BNB</name>
+          <logo>BnB.png</logo>
           <seuil>200</seuil>
-          <idcible>123</idcible>
-          <ratio>3.1415926535</ratio>
+          <idcible>4</idcible>
+          <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
-          <unlocked>true</unlocked>
+          <unlocked>false</unlocked>
         </pallier>
       </palliers>
     </product>
     <product>
       <id>5</id>
       <name>Ethereum</name>
-      <logo>logo2</logo>
-      <cout>3.1415926535</cout>
-      <croissance>3.1415926535</croissance>
-      <revenu>3.1415926535</revenu>
-      <vitesse>123</vitesse>
-      <quantite>123</quantite>
-      <timeleft>12345</timeleft>
-      <managerUnlocked>true</managerUnlocked>
+      <logo>ethereum.jpg</logo>
+      <cout>103680</cout>
+      <croissance>1.12</croissance>
+      <revenu>51840</revenu>
+      <vitesse>24</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>str1234</name>
-          <logo>str1234</logo>
+          <name>Ethereum</name>
+          <logo>ethereum.jpg</logo>
           <seuil>150</seuil>
-          <idcible>123</idcible>
-          <ratio>3.1415926535</ratio>
+          <idcible>5</idcible>
+          <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
-          <unlocked>true</unlocked>
+          <unlocked>false</unlocked>
         </pallier>
       </palliers>
     </product>
     <product>
       <id>6</id>
       <name>Bitcoin</name>
-      <logo>logo2</logo>
-      <cout>3.1415926535</cout>
-      <croissance>3.1415926535</croissance>
-      <revenu>3.1415926535</revenu>
-      <vitesse>123</vitesse>
-      <quantite>123</quantite>
-      <timeleft>12345</timeleft>
+      <logo>bitcoin.png</logo>
+      <cout>1244160</cout>
+      <croissance>1.11</croissance>
+      <revenu>622080</revenu>
+      <vitesse>96</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>str1234</name>
-          <logo>str1234</logo>
+          <name>Bitcoin</name>
+          <logo>bitcoin.png</logo>
           <seuil>100</seuil>
-          <idcible>123</idcible>
-          <ratio>3.1415926535</ratio>
+          <idcible>6</idcible>
+          <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
-          <unlocked>true</unlocked>
+          <unlocked>false</unlocked>
         </pallier>
       </palliers>
     </product>
   </products>
   <allunlocks>
     <pallier>
-      <name>str1234</name>
+      <name>Bonus</name>
       <logo>str1234</logo>
       <seuil>123</seuil>
-      <idcible>123</idcible>
-      <ratio>3.1415926535</ratio>
-      <typeratio>vitesse</typeratio>
-      <unlocked>true</unlocked>
+      <idcible>0</idcible>
+      <ratio>2</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
     </pallier>
   </allunlocks>
   <upgrades>
@@ -197,20 +175,65 @@
       <name>str1234</name>
       <logo>str1234</logo>
       <seuil>123</seuil>
-      <idcible>123</idcible>
-      <ratio>3.1415926535</ratio>
-      <typeratio>vitesse</typeratio>
+      <idcible>-1</idcible>
+      <ratio>1</ratio>
+      <typeratio>ange</typeratio>
       <unlocked>true</unlocked>
     </pallier>
   </angelupgrades>
   <managers>
     <pallier>
-      <name>manager1</name>
-      <logo>logo4</logo>
+      <name>XRP Manager</name>
+      <logo>str1234</logo>
       <seuil>1000</seuil>
       <idcible>1</idcible>
-      <ratio>3.1415926535</ratio>
-      <typeratio>vitesse</typeratio>
+      <ratio>3</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Solana Manager</name>
+      <logo>str1234</logo>
+      <seuil>15000</seuil>
+      <idcible>2</idcible>
+      <ratio>3</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Shiba Manager</name>
+      <logo>str1234</logo>
+      <seuil>100000</seuil>
+      <idcible>3</idcible>
+      <ratio>3</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>BNB Manager</name>
+      <logo>str1234</logo>
+      <seuil>500000</seuil>
+      <idcible>4</idcible>
+      <ratio>3</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Ethereum Manager</name>
+      <logo>str1234</logo>
+      <seuil>1200000</seuil>
+      <idcible>5</idcible>
+      <ratio>3</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Bitcoin Manager</name>
+      <logo>str1234</logo>
+      <seuil>10000000</seuil>
+      <idcible>6</idcible>
+      <ratio>3</ratio>
+      <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
   </managers>
