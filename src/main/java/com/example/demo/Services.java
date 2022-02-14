@@ -44,6 +44,6 @@ public class Services {
     }
 
     World getWorld() {
-
+        return readWorldFromXml();
     }
 }
