@@ -11,10 +11,10 @@
   <products>
     <product>
       <id>1</id>
-      <name>Lebron James</name>
+      <name>XRP</name>
       <logo>logo2</logo>
-      <cout>3.1415926535</cout>
-      <croissance>3.1415926535</croissance>
+      <cout>4</cout>
+      <croissance>0.07</croissance>
       <revenu>3.1415926535</revenu>
       <vitesse>123</vitesse>
       <quantite>123</quantite>
@@ -24,7 +24,7 @@
         <pallier>
           <name>str1234</name>
           <logo>str1234</logo>
-          <seuil>123</seuil>
+          <seuil>300</seuil>
           <idcible>123</idcible>
           <ratio>3.1415926535</ratio>
           <typeratio>vitesse</typeratio>
@@ -34,7 +34,7 @@
     </product>
     <product>
       <id>2</id>
-      <name>Stephen Curry</name>
+      <name>Solana</name>
       <logo>logo2</logo>
       <cout>3.1415926535</cout>
       <croissance>3.1415926535</croissance>
@@ -47,7 +47,99 @@
         <pallier>
           <name>str1234</name>
           <logo>str1234</logo>
-          <seuil>123</seuil>
+          <seuil>250</seuil>
+          <idcible>123</idcible>
+          <ratio>3.1415926535</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <product>
+      <id>3</id>
+      <name>Shiba</name>
+      <logo>logo2</logo>
+      <cout>3.1415926535</cout>
+      <croissance>3.1415926535</croissance>
+      <revenu>3.1415926535</revenu>
+      <vitesse>123</vitesse>
+      <quantite>123</quantite>
+      <timeleft>12345</timeleft>
+      <managerUnlocked>true</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>str1234</name>
+          <logo>str1234</logo>
+          <seuil>200</seuil>
+          <idcible>123</idcible>
+          <ratio>3.1415926535</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <product>
+      <id>4</id>
+      <name>BNB</name>
+      <logo>logo2</logo>
+      <cout>3.1415926535</cout>
+      <croissance>3.1415926535</croissance>
+      <revenu>3.1415926535</revenu>
+      <vitesse>123</vitesse>
+      <quantite>123</quantite>
+      <timeleft>12345</timeleft>
+      <managerUnlocked>true</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>str1234</name>
+          <logo>str1234</logo>
+          <seuil>200</seuil>
+          <idcible>123</idcible>
+          <ratio>3.1415926535</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <product>
+      <id>5</id>
+      <name>Ethereum</name>
+      <logo>logo2</logo>
+      <cout>3.1415926535</cout>
+      <croissance>3.1415926535</croissance>
+      <revenu>3.1415926535</revenu>
+      <vitesse>123</vitesse>
+      <quantite>123</quantite>
+      <timeleft>12345</timeleft>
+      <managerUnlocked>true</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>str1234</name>
+          <logo>str1234</logo>
+          <seuil>150</seuil>
+          <idcible>123</idcible>
+          <ratio>3.1415926535</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <product>
+      <id>6</id>
+      <name>Bitcoin</name>
+      <logo>logo2</logo>
+      <cout>3.1415926535</cout>
+      <croissance>3.1415926535</croissance>
+      <revenu>3.1415926535</revenu>
+      <vitesse>123</vitesse>
+      <quantite>123</quantite>
+      <timeleft>12345</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>str1234</name>
+          <logo>str1234</logo>
+          <seuil>100</seuil>
           <idcible>123</idcible>
           <ratio>3.1415926535</ratio>
           <typeratio>vitesse</typeratio>
