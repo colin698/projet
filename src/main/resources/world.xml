@@ -127,7 +127,7 @@
     <product>
       <id>6</id>
       <name>Bitcoin</name>
-      <logo>bitcoin.png</logo>
+      <logo>bitcoin.PNG</logo>
       <cout>1244160</cout>
       <croissance>1.11</croissance>
       <revenu>622080</revenu>
@@ -138,7 +138,7 @@
       <palliers>
         <pallier>
           <name>Bitcoin</name>
-          <logo>bitcoin.png</logo>
+          <logo>bitcoin.PNG</logo>
           <seuil>100</seuil>
           <idcible>6</idcible>
           <ratio>2</ratio>
