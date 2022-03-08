@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -80,14 +81,14 @@ public class Services {
             double coutProd = product.getCout();
             double croissance = product.getCroissance();
             double newCout = coutProd * Math.pow(croissance, qtchange);
-            double newArgent = argent ;
+            double newArgent = argent - coutProd; //a revoir
             product.setCout(newCout);
             product.setQuantite(newQuantite);
             world.setMoney(newArgent);
         } else {
             // initialiser product.timeleft à product.vitesse
             // pour lancer la production
-             product.timeleft=product.vitesse;//pas sur
+             product.timeleft=product.vitesse;//pas sur a revoir
             System.out.println(product.getTimeleft());
             world.setMoney(world.getMoney() + (product.getRevenu() * product.getQuantite()));
         }
@@ -128,7 +129,10 @@ public class Services {
         // débloquer le manager de ce produit
         product.setManagerUnlocked(true);
         // soustraire de l'argent du joueur le cout du manager
-        
+        double argent = world.getMoney();
+        double seuil = manager.getSeuil();
+        double newArgent = argent - seuil;
+        world.setMoney(newArgent);
         // sauvegarder les changements au monde
         saveWorldToXML(username, world);
         return true;
@@ -142,5 +146,12 @@ public class Services {
             }
         }
         return nomManager;
+    }
+    void MajWorld(World world, String username){
+        long temps = System.currentTimeMillis()-world.getLastupdate();
+        List<ProductType> produits = (List<ProductType>) world.getProducts();
+        for (ProductType p : produits) {
+            
+        }
     }
 }
