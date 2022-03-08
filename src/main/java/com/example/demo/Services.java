@@ -74,10 +74,22 @@ public class Services {
         if (qtchange > 0) {
             // soustraire de l'argent du joueur le cout de la quantité
             // achetée et mettre à jour la quantité de product
-
+            int quantite = product.getQuantite();
+            int newQuantite = newproduct.getQuantite();
+            double argent = world.getMoney(); 
+            double coutProd = product.getCout();
+            double croissance = product.getCroissance();
+            double newCout = coutProd * Math.pow(croissance, qtchange);
+            double newArgent = argent ;
+            product.setCout(newCout);
+            product.setQuantite(newQuantite);
+            world.setMoney(newArgent);
         } else {
             // initialiser product.timeleft à product.vitesse
             // pour lancer la production
+             product.timeleft=product.vitesse;//pas sur
+            System.out.println(product.getTimeleft());
+            world.setMoney(world.getMoney() + (product.getRevenu() * product.getQuantite()));
         }
         // sauvegarder les changements du monde
         saveWorldToXML(username, world);
@@ -107,14 +119,16 @@ public class Services {
         }
 
         // débloquer ce manager
+        manager.setUnlocked(true);
         // trouver le produit correspondant au manager
         ProductType product = findProductById(world, manager.getIdcible());
         if (product == null) {
             return false;
         }
         // débloquer le manager de ce produit
-
+        product.setManagerUnlocked(true);
         // soustraire de l'argent du joueur le cout du manager
+        
         // sauvegarder les changements au monde
         saveWorldToXML(username, world);
         return true;
