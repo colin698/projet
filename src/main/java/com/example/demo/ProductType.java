@@ -6,7 +6,7 @@
 //
 
 
-package com.example.demo.generated;
+package com.example.demo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
