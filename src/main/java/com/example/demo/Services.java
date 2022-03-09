@@ -28,11 +28,13 @@ public class Services {
             Unmarshaller u = cont.createUnmarshaller();
             File file = new File(username + "-world.xml");
             world = (World) u.unmarshal(file);
+
         } catch (Exception e) {
             InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Unmarshaller u = cont.createUnmarshaller();
             world = (World) u.unmarshal(input);
+
         }
         return world;
     }
@@ -93,8 +95,8 @@ public class Services {
         }
         //Prise en compte des upgrades
         List<PallierType> unlocks = (List<PallierType>) product.getPalliers().getPallier();
-        for (PallierType u : unlocks){
-            if(product.getQuantite()>= u.getSeuil()&& u.isUnlocked() == false){
+        for (PallierType u : unlocks) {
+            if (product.getQuantite() >= u.getSeuil() && u.isUnlocked() == false) {
                 calculUpgrade(u, product);
             }
         }
@@ -170,34 +172,20 @@ public class Services {
                     p.setTimeleft(newTempsRest);
                 }
             } else {
-                  int vitesse = p.getVitesse();
-                  long prod = temps / vitesse;
-                  double newScore = world.getScore() + (p.getRevenu() * prod);
-                  double newArgent = world.getMoney() + (p.getRevenu()* prod);
-                  world.setScore(newScore);
-                  world.setMoney(newArgent);
-                  long tempsRestant = vitesse - temps % vitesse;
-                  p.setTimeleft(tempsRestant);
+                int vitesse = p.getVitesse();
+                long prod = temps / vitesse;
+                double newScore = world.getScore() + (p.getRevenu() * prod);
+                double newArgent = world.getMoney() + (p.getRevenu() * prod);
+                world.setScore(newScore);
+                world.setMoney(newArgent);
+                long tempsRestant = vitesse - temps % vitesse;
+                p.setTimeleft(tempsRestant);
             }
         }
         world.setLastupdate(System.currentTimeMillis());
     }
 
-    public void calculUpgrade(PallierType u, ProductType product) {
-        u.setUnlocked(true);
-        if (u.getTyperatio()== TyperatioType.VITESSE){
-            int vitesse = product.getVitesse();
-            double newVitesse = vitesse * u.getRatio();
-            product.setVitesse((int) newVitesse);
-        }
-        if (u.getTyperatio()== TyperatioType.GAIN){
-            double revenu = product.getRevenu();
-            double newRevenu = revenu * u.getRatio();
-            product.setRevenu(newRevenu);
-        }
-
-    }
-    public Boolean updateUpgrade(String username, PallierType newupgrade) throws JAXBException{
+    public Boolean updateUpgrade(String username, PallierType newupgrade) throws JAXBException {
         World world = getWorld(username);
         // trouver dans ce monde, le manager équivalent à celui passé
         // en paramètre
@@ -220,19 +208,34 @@ public class Services {
         double seuil = upgrade.getSeuil();
         double newArgent = argent - seuil;
         world.setMoney(newArgent);
-        calculUpgrade(upgrade,product);
+        calculUpgrade(upgrade, product);
         // sauvegarder les changements au monde
         saveWorldToXML(username, world);
         return true;
     }
-    
-    public PallierType findUpgradeByName(World world, String nom){
-    PallierType nomUpgrade = null;
+
+    public PallierType findUpgradeByName(World world, String nom) {
+        PallierType nomUpgrade = null;
         for (PallierType nomUp : world.getUpgrades().pallier) {
             if (nom.equals(nomUp.getName())) {
                 nomUpgrade = nomUp;
             }
         }
         return nomUpgrade;
-}
+    }
+
+    public void calculUpgrade(PallierType u, ProductType product) {
+        u.setUnlocked(true);
+        if (u.getTyperatio() == TyperatioType.VITESSE) {
+            int vitesse = product.getVitesse();
+            double newVitesse = vitesse * u.getRatio();
+            product.setVitesse((int) newVitesse);
+        }
+        if (u.getTyperatio() == TyperatioType.GAIN) {
+            double revenu = product.getRevenu();
+            double newRevenu = revenu * u.getRatio();
+            product.setRevenu(newRevenu);
+        }
+
+    }
 }
