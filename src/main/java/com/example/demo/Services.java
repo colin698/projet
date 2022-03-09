@@ -75,7 +75,6 @@ public class Services {
         if (qtchange > 0) {
             // soustraire de l'argent du joueur le cout de la quantité
             // achetée et mettre à jour la quantité de product
-            int quantite = product.getQuantite();
             int newQuantite = newproduct.getQuantite();
             double argent = world.getMoney(); 
             double coutProd = product.getCout();
@@ -147,11 +146,26 @@ public class Services {
         }
         return nomManager;
     }
+    
+            
     void MajWorld(World world, String username){
         long temps = System.currentTimeMillis()-world.getLastupdate();
         List<ProductType> produits = (List<ProductType>) world.getProducts();
         for (ProductType p : produits) {
-            
+            //Cas manager non debloqué
+            if(p.isManagerUnlocked()==false){
+                if (p.getTimeleft()<temps && p.getTimeleft()!=0){
+                    double newScore = world.getScore() + p.getRevenu();
+                    double newArgent = world.getMoney() + p.getRevenu();
+                    world.setScore(newScore);
+                    world.setMoney(newArgent);
+                }else{
+                    long newTempsRest = p.getTimeleft()-temps;
+                    p.setTimeleft(newTempsRest);
+                }
+            }else{
+                
+            }
         }
     }
 }
