@@ -91,6 +91,13 @@ public class Services {
             System.out.println(product.getTimeleft());
             world.setMoney(world.getMoney() + (product.getRevenu() * product.getQuantite()));
         }
+        //Prise en compte des upgrades
+        List<PallierType> unlocks = (List<PallierType>) product.getPalliers().getPallier();
+        for (PallierType u : unlocks){
+            if(product.getQuantite()>= u.getSeuil()&& u.isUnlocked() == false){
+                calculUpgrade(u, product);
+            }
+        }
         // sauvegarder les changements du monde
         saveWorldToXML(username, world);
         return true;
@@ -174,5 +181,20 @@ public class Services {
             }
         }
         world.setLastupdate(System.currentTimeMillis());
+    }
+
+    public void calculUpgrade(PallierType u, ProductType product) {
+        u.setUnlocked(true);
+        if (u.getTyperatio()== TyperatioType.VITESSE){
+            double vitesse = product.getVitesse();
+            vitesse = vitesse * u.getRatio();
+            //vitesse est un type int mais on le met en double car on doit faire 
+            // des opérations dessus mais on le retransforme en int dans cette ligne
+            product.setVitesse((int) vitesse);
+        }
+        if (u.getTyperatio()== TyperatioType.GAIN){
+            double revenu = product.getRevenu();
+        }
+
     }
 }
