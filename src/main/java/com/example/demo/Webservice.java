@@ -50,4 +50,11 @@ public class Webservice {
         String username = request.getHeader("X-user");
         services.updateManager(username, manager);
     }
+    
+    @PUT
+    @Path("upgrade")
+    public void putUpgrade(@Context HttpServletRequest request, PallierType upgrade) throws JAXBException {
+        String username = request.getHeader("X-user");
+        services.updateUpgrade(username, upgrade);
+    }
 }

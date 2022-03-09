@@ -186,15 +186,53 @@ public class Services {
     public void calculUpgrade(PallierType u, ProductType product) {
         u.setUnlocked(true);
         if (u.getTyperatio()== TyperatioType.VITESSE){
-            double vitesse = product.getVitesse();
-            vitesse = vitesse * u.getRatio();
-            //vitesse est un type int mais on le met en double car on doit faire 
-            // des opérations dessus mais on le retransforme en int dans cette ligne
-            product.setVitesse((int) vitesse);
+            int vitesse = product.getVitesse();
+            double newVitesse = vitesse * u.getRatio();
+            product.setVitesse((int) newVitesse);
         }
         if (u.getTyperatio()== TyperatioType.GAIN){
             double revenu = product.getRevenu();
+            double newRevenu = revenu * u.getRatio();
+            product.setRevenu(newRevenu);
         }
 
     }
+    public Boolean updateUpgrade(String username, PallierType newupgrade) throws JAXBException{
+        World world = getWorld(username);
+        // trouver dans ce monde, le manager équivalent à celui passé
+        // en paramètre
+        PallierType upgrade = findUpgradeByName(world, newupgrade.getName());
+        if (upgrade == null) {
+            return false;
+        }
+
+        // débloquer ce manager
+        upgrade.setUnlocked(true);
+        // trouver le produit correspondant au manager
+        ProductType product = findProductById(world, upgrade.getIdcible());
+        if (product == null) {
+            return false;
+        }
+        // débloquer le manager de ce produit
+        product.setManagerUnlocked(true);
+        // soustraire de l'argent du joueur le cout du manager
+        double argent = world.getMoney();
+        double seuil = upgrade.getSeuil();
+        double newArgent = argent - seuil;
+        world.setMoney(newArgent);
+        calculUpgrade(upgrade,product);
+        // sauvegarder les changements au monde
+        saveWorldToXML(username, world);
+        return true;
+    }
+    
+    public PallierType findUpgradeByName(World world, String nom){
+    PallierType nomUpgrade = null;
+        for (PallierType nomUp : world.getUpgrades().pallier) {
+            if (nom.equals(nomUp.getName())) {
+                nomUpgrade = nomUp;
+            }
+        }
+        return nomUpgrade;
+}
 }
