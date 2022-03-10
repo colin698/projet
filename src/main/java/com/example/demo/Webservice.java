@@ -36,25 +36,51 @@ public class Webservice {
         String username = request.getHeader("X-user");
         return Response.ok(services.getWorld(username)).build();
     }
+    @PUT
+    @Path("world")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public void putWorld(@Context HttpServletRequest request, World world) throws JAXBException {
+        String username = request.getHeader("X-user");
+        services.updateWorld(world, username);
+    }
     
     @PUT
     @Path("world")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void putProduit(@Context HttpServletRequest request, ProductType produit) throws JAXBException {
         String username = request.getHeader("X-user");
         services.updateProduct(username, produit);
     }
-    
+
     @PUT
     @Path("world")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void putManager(@Context HttpServletRequest request, PallierType manager) throws JAXBException {
         String username = request.getHeader("X-user");
         services.updateManager(username, manager);
     }
-    
+
     @PUT
     @Path("upgrade")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void putUpgrade(@Context HttpServletRequest request, PallierType upgrade) throws JAXBException {
         String username = request.getHeader("X-user");
         services.updateUpgrade(username, upgrade);
+    }
+
+    @PUT
+    @Path("allunlock")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public void putAllUnlock(@Context HttpServletRequest request, PallierType allUnlock) throws JAXBException {
+        String username = request.getHeader("X-user");
+        services.updateAllUnlock(username, allUnlock);
+    }
+
+    @PUT
+    @Path("angel")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public void putAngel(@Context HttpServletRequest request, PallierType angel) throws JAXBException {
+        String username = request.getHeader("X-user");
+        services.updateAngel(username, angel);
     }
 }
