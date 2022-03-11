@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <world>
   <name>MonMonde</name>
-  <logo>image1</logo>
+  <logo>monImage.png</logo>
   <money>0</money>
   <score>0</score>
   <totalangels>0</totalangels>
