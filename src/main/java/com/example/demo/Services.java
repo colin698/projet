@@ -91,8 +91,7 @@ public class Services {
         } else {
             // initialiser product.timeleft à product.vitesse
             // pour lancer la production
-            product.timeleft = product.vitesse;//pas sur a revoir
-            System.out.println(product.getTimeleft());
+            product.setTimeleft(product.getVitesse());
             world.setMoney(world.getMoney() + (product.getRevenu() * product.getQuantite()));
         }
         //Prise en compte des upgrades
@@ -241,30 +240,6 @@ public class Services {
         
     }
     
-    public Boolean updateAllUnlock(String username, PallierType newAllUnlock) throws JAXBException {
-        World world = getWorld(username);
-        
-        PallierType AllUnlock = findUpgradeByName(world, newAllUnlock.getName());
-        if (AllUnlock == null) {
-            return false;
-        }
-
-        // débloquer ce manager
-        AllUnlock.setUnlocked(true);
-        if (AllUnlock.getIdcible() == 0) {
-            List<ProductType> products = world.getProducts().getProduct();
-
-            // modifier les produits en fonction du ratio du cash upgrade
-            for (ProductType product : products) {
-                calculUpgrade(AllUnlock, product);
-            }
-            // sauvegarder les changements au monde
-            saveWorldToXML(username, world);
-            return true;
-        }
-        return false;
-    }
-
     public Boolean updateAngel(String username, PallierType angel) throws JAXBException {
         World world = getWorld(username);
         PallierType ange = findAngelByName(world, angel.getName());
