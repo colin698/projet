@@ -13,7 +13,7 @@
       <id>1</id>
       <name>Doge</name>
       <logo>icones/doge.png</logo>
-      <cout>720</cout>
+      <cout>4</cout>
       <croissance>1.07</croissance>
       <revenu>1</revenu>
       <vitesse>500</vitesse>
