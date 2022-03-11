@@ -20,7 +20,7 @@ import javax.xml.bind.Unmarshaller;
  * @author colin
  */
 public class Services {
-
+    
     World readWorldFromXml(String username) throws JAXBException {
         World world = null;
         try {
@@ -28,17 +28,17 @@ public class Services {
             Unmarshaller u = cont.createUnmarshaller();
             File file = new File(username + "-world.xml");
             world = (World) u.unmarshal(file);
-
+            
         } catch (Exception e) {
             InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Unmarshaller u = cont.createUnmarshaller();
             world = (World) u.unmarshal(input);
-
+            
         }
         return world;
     }
-
+    
     void saveWorldToXML(String username, World world) {
         try {
             JAXBContext cont = JAXBContext.newInstance(World.class);
@@ -49,32 +49,35 @@ public class Services {
             e.printStackTrace();
         }
     }
-
+    
     World getWorld(String username) throws JAXBException {
-        World leMonde = this.readWorldFromXml(username);
-        this.updateWorld(leMonde, username);
+        World leMonde = readWorldFromXml(username);
+        updateWorld(leMonde, username);
         saveWorldToXML(username, leMonde);//eadWorldFromXml(String username);
         return leMonde;
     }
-
+    
     public void deleteWorld(String username) throws JAXBException {
         World world = readWorldFromXml(username);
         double ange = world.getActiveangels();
         double totalAnge = world.getTotalangels();
         double score = world.getScore();
-
+        
         double angeSup = Math.round(150 * Math.sqrt((world.getScore()) / Math.pow(10, 15))) - totalAnge;
-
+        
         ange += ange + angeSup;
         totalAnge += ange + angeSup;
-
+        
         JAXBContext cont = JAXBContext.newInstance(World.class);
         Unmarshaller u = cont.createUnmarshaller();
         InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
         world = (World) u.unmarshal(input);
+        
         world.setActiveangels(ange);
         world.setTotalangels(totalAnge);
         world.setScore(score);
+
+        // sauvegarder les changements du monde
         saveWorldToXML(username, world);
     }
 
@@ -103,8 +106,7 @@ public class Services {
             double argent = world.getMoney();
             double coutProd = product.getCout();
             double prix = coutProd * (1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance());
-            double croissance = product.getCroissance();
-            double newCout = coutProd * Math.pow(croissance, qtchange);
+            double newCout = coutProd * Math.pow(product.getCroissance(), qtchange);
             double newArgent = argent - prix; //a revoir
             product.setCout(newCout);
             product.setQuantite(newQuantite);
@@ -116,7 +118,7 @@ public class Services {
             world.setMoney(world.getMoney() + (product.getRevenu() * product.getQuantite()));
         }
         //Prise en compte des upgrades
-        List<PallierType> unlocks = (List<PallierType>) product.getPalliers().getPallier();
+        List<PallierType> unlocks = product.getPalliers().getPallier();
         for (PallierType u : unlocks) {
             if (product.getQuantite() >= u.getSeuil() && u.isUnlocked() == false) {
                 calculUpgrade(u, product);
@@ -126,7 +128,7 @@ public class Services {
         saveWorldToXML(username, world);
         return true;
     }
-
+    
     public ProductType findProductById(World world, int id) {
         ProductType idProduit = null;
         for (ProductType produit : world.getProducts().product) {
@@ -167,7 +169,7 @@ public class Services {
         saveWorldToXML(username, world);
         return true;
     }
-
+    
     public PallierType findManagerByName(World world, String nom) {
         PallierType nomManager = null;
         for (PallierType nomMana : world.getManagers().pallier) {
@@ -177,7 +179,7 @@ public class Services {
         }
         return nomManager;
     }
-
+    
     void updateWorld(World world, String username) {
         long temps = System.currentTimeMillis() - world.getLastupdate();
         List<ProductType> produits = world.getProducts().getProduct();
@@ -208,7 +210,7 @@ public class Services {
         }
         world.setLastupdate(System.currentTimeMillis());
     }
-
+    
     public Boolean updateUpgrade(String username, PallierType newupgrade) throws JAXBException {
         World world = getWorld(username);
         // trouver dans ce monde, le manager équivalent à celui passé
@@ -235,7 +237,7 @@ public class Services {
         saveWorldToXML(username, world);
         return true;
     }
-
+    
     public PallierType findUpgradeByName(World world, String nom) {
         PallierType nomUpgrade = null;
         for (PallierType nomUp : world.getUpgrades().pallier) {
@@ -245,7 +247,7 @@ public class Services {
         }
         return nomUpgrade;
     }
-
+    
     public void calculUpgrade(PallierType u, ProductType product) {
         u.setUnlocked(true);
         if (u.getTyperatio() == TyperatioType.VITESSE) {
@@ -258,9 +260,9 @@ public class Services {
             double newRevenu = revenu * u.getRatio();
             product.setRevenu(newRevenu);
         }
-
+        
     }
-
+    
     public Boolean updateAngel(String username, PallierType angel) throws JAXBException {
         World world = getWorld(username);
         PallierType ange = findAngelByName(world, angel.getName());
@@ -274,17 +276,21 @@ public class Services {
         int anges = ange.getSeuil();
         double newAnge = totalAnge - anges;
         if (ange.getTyperatio() == TyperatioType.ANGE) {
-
+            int angeBonus = world.getAngelbonus();
+            angeBonus += ange.getRatio();
+            world.setAngelbonus(angeBonus);
+            
         } else {
-
+            updateUpgrade(username, ange);
+            
         }
-
+        
         world.setActiveangels(newAnge);
         // sauvegarder les changements au monde
         saveWorldToXML(username, world);
         return true;
     }
-
+    
     public PallierType findAngelByName(World world, String nom) {
         PallierType ange = null;
         for (PallierType nomAnge : world.getAngelupgrades().pallier) {
