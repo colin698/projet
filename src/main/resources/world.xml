@@ -12,7 +12,7 @@
     <product>
       <id>1</id>
       <name>XRP</name>
-      <logo>xrp.jpg</logo>
+      <logo>xrp.png</logo>
       <cout>4</cout>
       <croissance>1.07</croissance>
       <revenu>1</revenu>
@@ -57,8 +57,8 @@
     </product>
     <product>
       <id>3</id>
-      <name>Shiba</name>
-      <logo>shiba.png</logo>
+      <name>Doge</name>
+      <logo>doge.png</logo>
       <cout>720</cout>
       <croissance>1.14</croissance>
       <revenu>540</revenu>
@@ -68,8 +68,8 @@
       <managerUnlocked>true</managerUnlocked>
       <palliers>
         <pallier>
-          <name>Shiba</name>
-          <logo>shiba.png</logo>
+          <name>Doge</name>
+          <logo>doge.png</logo>
           <seuil>200</seuil>
           <idcible>3</idcible>
           <ratio>2</ratio>
@@ -80,7 +80,7 @@
     </product>
     <product>
       <id>4</id>
-      <name>BNB</name>
+      <name>BnB</name>
       <logo>BnB.png</logo>
       <cout>8640</cout>
       <croissance>1.13</croissance>
@@ -91,7 +91,7 @@
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>BNB</name>
+          <name>BnB</name>
           <logo>BnB.png</logo>
           <seuil>200</seuil>
           <idcible>4</idcible>
@@ -104,7 +104,7 @@
     <product>
       <id>5</id>
       <name>Ethereum</name>
-      <logo>ethereum.jpg</logo>
+      <logo>ethereum.png</logo>
       <cout>103680</cout>
       <croissance>1.12</croissance>
       <revenu>51840</revenu>
@@ -115,7 +115,7 @@
       <palliers>
         <pallier>
           <name>Ethereum</name>
-          <logo>ethereum.jpg</logo>
+          <logo>ethereum.png</logo>
           <seuil>150</seuil>
           <idcible>5</idcible>
           <ratio>2</ratio>
@@ -127,7 +127,7 @@
     <product>
       <id>6</id>
       <name>Bitcoin</name>
-      <logo>bitcoin.PNG</logo>
+      <logo>bitcoin.png</logo>
       <cout>1244160</cout>
       <croissance>1.11</croissance>
       <revenu>622080</revenu>
@@ -138,7 +138,7 @@
       <palliers>
         <pallier>
           <name>Bitcoin</name>
-          <logo>bitcoin.PNG</logo>
+          <logo>bitcoin.png</logo>
           <seuil>100</seuil>
           <idcible>6</idcible>
           <ratio>2</ratio>
@@ -201,7 +201,7 @@
       <unlocked>false</unlocked>
     </pallier>
     <pallier>
-      <name>Shiba Manager</name>
+      <name>Doge Manager</name>
       <logo>str1234</logo>
       <seuil>100000</seuil>
       <idcible>3</idcible>
