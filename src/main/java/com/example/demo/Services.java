@@ -185,6 +185,7 @@ public class Services {
         long temps = System.currentTimeMillis() - world.getLastupdate();
         List<ProductType> produits = world.getProducts().getProduct();
         for (ProductType p : produits) {
+            //produits.forEach(p -> {
             //Cas manager non debloqué
             if (p.isManagerUnlocked() == false) {
                 if (p.getTimeleft() < temps && p.getTimeleft() != 0) {
@@ -301,5 +302,5 @@ public class Services {
         }
         return ange;
     }
-
+     
 }

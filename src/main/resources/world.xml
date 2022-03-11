@@ -361,7 +361,7 @@
 	<pallier>
 		<name>This is my XRP</name>
 		<logo>icones/xrp.png</logo>
-		<seuil>1000</seuil>
+		<seuil>10000</seuil>
 		<idcible>2</idcible>
 		<ratio>3.0</ratio>
 		<typeratio>gain</typeratio>
@@ -370,7 +370,7 @@
 	<pallier>
 		<name>A nice Solana</name>
 		<logo>icones/solana.png</logo>
-		<seuil>1000</seuil>
+		<seuil>100000</seuil>
 		<idcible>3</idcible>
 		<ratio>3.0</ratio>
 		<typeratio>gain</typeratio>
@@ -379,7 +379,7 @@
 	<pallier>
 		<name>I want this BNB !</name>
 		<logo>icones/BnB.png</logo>
-		<seuil>1000</seuil>
+		<seuil>1000000</seuil>
 		<idcible>4</idcible>
 		<ratio>3</ratio>
 		<typeratio>gain</typeratio>
@@ -388,7 +388,7 @@
 	<pallier>
 		<name>Don't laugh ! Just buy Ethereum ! </name>
 		<logo>icones/ethereum.png</logo>
-		<seuil>1000</seuil>
+		<seuil>10000000</seuil>
 		<idcible>5</idcible>
 		<ratio>3.0</ratio>
 		<typeratio>gain</typeratio>
@@ -397,7 +397,7 @@
 	<pallier>
 		<name>A big Bitcoin</name>
 		<logo>icones/bitcoin.png</logo>
-		<seuil>1000</seuil>
+		<seuil>100000000</seuil>
 		<idcible>6</idcible>
 		<ratio>3</ratio>
 		<typeratio>gain</typeratio>
@@ -417,7 +417,7 @@
 	<pallier>
 		<name>Angelic Mutiny</name>
 		<logo>icones/angel.png</logo>
-		<seuil>100000.0</seuil>
+		<seuil>100000</seuil>
 		<idcible>-1</idcible>
 		<ratio>2.0</ratio>
 		<typeratio>ange</typeratio>
@@ -426,7 +426,7 @@
 	<pallier>
 		<name>Angelic Rebellion</name>
 		<logo>icones/angel.png</logo>
-		<seuil>1.0E8</seuil>
+		<seuil>100000000</seuil>
 		<idcible>-1</idcible>
 		<ratio>2.0</ratio>
 		<typeratio>ange</typeratio>
@@ -435,7 +435,7 @@
 	<pallier>
 		<name>Angelic Selection</name>
 		<logo>icones/angel.png</logo>
-		<seuil>1.0E9</seuil>
+		<seuil>1000000000</seuil>
 		<idcible>0</idcible>
 		<ratio>5.0</ratio>
 		<typeratio>gain</typeratio>
@@ -491,7 +491,7 @@
     <pallier>
       <name>Bitcoin Manager</name>
       <logo>icones/bitcoin.png</logo>
-      <seuil>1E7</seuil>
+      <seuil>10000000</seuil>
       <idcible>6</idcible>
       <ratio>0</ratio>
       <typeratio>gain</typeratio>
