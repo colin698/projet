@@ -137,7 +137,7 @@ public class Services {
             }
         }
         return idProduit;
-    }
+    }//Jusqu'ici tout marche
     // prend en paramètre le pseudo du joueur et le manager acheté.
 // renvoie false si l’action n’a pas pu être traitée
 
