@@ -148,7 +148,8 @@ public class Services {
         // en paramètre
         PallierType manager = findManagerByName(world, newmanager.getName());
         if (manager == null) {
-            return false;
+            System.out.println("manager non trouvé");
+            return null;
         }
 
         // débloquer ce manager
