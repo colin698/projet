@@ -8,6 +8,7 @@ package com.example.demo;
 import javax.xml.bind.JAXBException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -55,10 +56,17 @@ public class Webservice {
         services.updateUpgrade(username, upgrade);
         return upgrade;
     }
-    
+
     @PutMapping(value = "/angel", consumes = {"application/xml", "application/json"})
     public PallierType putAngel(@RequestHeader(value = "X-User", required = false) String username, @RequestBody PallierType ange) throws JAXBException {
         services.updateAngel(username, ange);
         return ange;
+    }
+
+    @DeleteMapping(value = "world", consumes = {"application/xml", "application/json"})
+    public ResponseEntity<World> DeleteWorld(@RequestHeader(value = "X-User", required = false) String username) throws JAXBException {
+        World world = services.getWorld(username);
+        services.deleteWorld(username);
+        return ResponseEntity.ok(world);
     }
 }
