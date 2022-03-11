@@ -301,21 +301,5 @@ public class Services {
         }
         return ange;
     }
-      public Boolean updateAllUnlock(String username, PallierType newAllunlocks) throws JAXBException {
-        World world = getWorld(username);
-        // trouver dans ce monde, le manager équivalent à celui passé
-        // en paramètre
-        PallierType allUnlock = findUpgradeByName(world, newAllunlocks.getName());
-        if (allUnlock == null) {
-            return false;
-        }
 
-        // débloquer ce manager
-        allUnlock.setUnlocked(true);
-        // trouver le produit correspondant au manager
-        // sauvegarder les changements au monde
-        saveWorldToXML(username, world);
-        return true;
-    }
-    
 }
