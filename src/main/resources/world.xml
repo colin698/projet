@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <world>
-  <name>MyCypto</name>
+  <name>MyCrypto</name>
   <logo>icones/monImage.png</logo>
   <money>0</money>
   <score>0</score>
