@@ -286,7 +286,8 @@ public class Services {
             updateUpgrade(username, ange);
             
         }
-        
+        world.setMoney(0);
+        world.setScore(0);
         world.setActiveangels(newAnge);
         // sauvegarder les changements au monde
         saveWorldToXML(username, world);
