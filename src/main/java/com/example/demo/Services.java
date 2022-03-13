@@ -107,7 +107,10 @@ public class Services {
             double coutProd = product.getCout();
             double prix = coutProd * (1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance());
             double newCout = coutProd * Math.pow(product.getCroissance(), qtchange);
-            double newArgent = argent - prix; //a revoir
+            double revenu = product.getRevenu();
+            double newRevenu = revenu * Math.pow(product.getCroissance(),qtchange);
+            double newArgent = argent - prix; 
+            product.setRevenu(newRevenu);
             product.setCout(newCout);
             product.setQuantite(newQuantite);
             world.setMoney(newArgent);
